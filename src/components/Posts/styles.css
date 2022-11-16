@@ -1,0 +1,5 @@
+.posts{
+  display: grid; /*Separate by columns and rows*/
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); /* for each element, if one doesn't fill the screen, use one*/
+  gap: 30px; /* space for each element*/
+}
