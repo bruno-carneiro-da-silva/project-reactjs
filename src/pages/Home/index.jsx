@@ -11,7 +11,7 @@ export class Home extends Component {
     posts: [],
     allPosts: [],
     page: 0,
-    postsPerPage: 2,
+    postsPerPage: 10,
     searchValue:''
   }
   async componentDidMount() {
@@ -30,7 +30,10 @@ export class Home extends Component {
 
   loadMorePosts = () => {
     const {
-      page, postsPerPage, allPosts, posts
+      page,
+      postsPerPage,
+      allPosts,
+      posts
     } = this.state;
     const nextPage = page + postsPerPage;
     const nextPosts = allPosts.slice(nextPage, nextPage + postsPerPage);
@@ -46,11 +49,17 @@ export class Home extends Component {
   }
 
   render() {
-    const { posts, page, postsPerPage, allPosts, searchValue } = this.state;
+    const {
+      posts,
+      page,
+      postsPerPage,
+      allPosts,
+      searchValue } = this.state;
     const noMorePosts = page + postsPerPage >= allPosts.length;
 
     //filtering the posts
-    const filteredPosts = !!searchValue ?
+    const filteredPosts = !!searchValue
+    ?
     allPosts.filter(post => {
       return post.title.toLowerCase().includes(
         searchValue.toLowerCase())
@@ -87,7 +96,7 @@ export class Home extends Component {
               <Button
               disabled={noMorePosts}
               onClick={this.loadMorePosts}
-              text="load posts"/>
+              text="Load more"/>
           )}
         </div>
 
