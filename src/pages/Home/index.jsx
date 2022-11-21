@@ -27,6 +27,7 @@ export class Home extends Component {
 
     })
   }
+  // loading the posts and photos
 
   loadMorePosts = () => {
     const {
