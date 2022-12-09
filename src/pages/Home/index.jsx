@@ -11,7 +11,7 @@ export class Home extends Component {
     posts: [],
     allPosts: [],
     page: 0,
-    postsPerPage: 5,
+    postsPerPage: 8,
     searchValue:''
   }
   async componentDidMount() {
@@ -19,7 +19,9 @@ export class Home extends Component {
   }
 
   loadPosts = async () => {
-    const {page,postsPerPage} = this.state;
+    const { page, postsPerPage } = this.state;
+
+    //ziping the arrays together
     const postsAndPhotos = await loadPosts();
     this.setState({
       posts: postsAndPhotos.slice(page, postsPerPage),

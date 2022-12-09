@@ -3,6 +3,7 @@
   box-shadow: 0 0 10px rgba(0,0,0,0.2);
   transition: transform 100ms ease-in-out;
   border-radius: 5px;
+  cursor: pointer;
 }
 .post:hover{
   transform: scale(1.05);
